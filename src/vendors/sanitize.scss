@@ -1,0 +1,6 @@
+@use '../utils/mixins' as *;
+
+@include load-module(
+  'sanitize.css',
+  ('sanitize', 'forms', 'assets', 'reduce-motion')
+);

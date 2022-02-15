@@ -1,0 +1,120 @@
+@use '../utils/mixins' as *;
+
+@include load-module(
+  'animate.css',
+  (
+    // Attention seekers
+    'source/attention_seekers/bounce',
+    'source/attention_seekers/flash',
+    'source/attention_seekers/pulse',
+    'source/attention_seekers/rubberBand',
+    'source/attention_seekers/shakeX',
+    'source/attention_seekers/shakeY',
+    'source/attention_seekers/headShake',
+    'source/attention_seekers/swing',
+    'source/attention_seekers/tada',
+    'source/attention_seekers/wobble',
+    'source/attention_seekers/jello',
+    'source/attention_seekers/heartBeat',
+    // Back entrances
+    'source/back_entrances/backInDown',
+    'source/back_entrances/backInLeft',
+    'source/back_entrances/backInRight',
+    'source/back_entrances/backInUp',
+    // Back exits
+    'source/back_exits/backOutDown',
+    'source/back_exits/backOutLeft',
+    'source/back_exits/backOutRight',
+    'source/back_exits/backOutUp',
+    // Bouncing entrances
+    'source/bouncing_entrances/bounceIn',
+    'source/bouncing_entrances/bounceInDown',
+    'source/bouncing_entrances/bounceInLeft',
+    'source/bouncing_entrances/bounceInRight',
+    'source/bouncing_entrances/bounceInUp',
+    // Bouncing exits
+    'source/bouncing_exits/bounceOut',
+    'source/bouncing_exits/bounceOutDown',
+    'source/bouncing_exits/bounceOutLeft',
+    'source/bouncing_exits/bounceOutRight',
+    'source/bouncing_exits/bounceOutUp',
+    // Fading entrances
+    'source/fading_entrances/fadeIn',
+    'source/fading_entrances/fadeInDown',
+    'source/fading_entrances/fadeInDownBig',
+    'source/fading_entrances/fadeInLeft',
+    'source/fading_entrances/fadeInLeftBig',
+    'source/fading_entrances/fadeInRight',
+    'source/fading_entrances/fadeInRightBig',
+    'source/fading_entrances/fadeInUp',
+    'source/fading_entrances/fadeInUpBig',
+    'source/fading_entrances/fadeInTopLeft',
+    'source/fading_entrances/fadeInTopRight',
+    'source/fading_entrances/fadeInBottomLeft',
+    'source/fading_entrances/fadeInBottomRight',
+    // Fading exits
+    'source/fading_exits/fadeOut',
+    'source/fading_exits/fadeOutDown',
+    'source/fading_exits/fadeOutDownBig',
+    'source/fading_exits/fadeOutLeft',
+    'source/fading_exits/fadeOutLeftBig',
+    'source/fading_exits/fadeOutRight',
+    'source/fading_exits/fadeOutRightBig',
+    'source/fading_exits/fadeOutUp',
+    'source/fading_exits/fadeOutUpBig',
+    'source/fading_exits/fadeOutTopLeft',
+    'source/fading_exits/fadeOutTopRight',
+    'source/fading_exits/fadeOutBottomRight',
+    'source/fading_exits/fadeOutBottomLeft',
+    // Flippers
+    'source/flippers/flip',
+    'source/flippers/flipInX',
+    'source/flippers/flipInY',
+    'source/flippers/flipOutX',
+    'source/flippers/flipOutY',
+    // Lightspeed
+    'source/lightspeed/lightSpeedInRight',
+    'source/lightspeed/lightSpeedInLeft',
+    'source/lightspeed/lightSpeedOutRight',
+    'source/lightspeed/lightSpeedOutLeft',
+    // Rotating entrances
+    'source/rotating_entrances/rotateIn',
+    'source/rotating_entrances/rotateInDownLeft',
+    'source/rotating_entrances/rotateInDownRight',
+    'source/rotating_entrances/rotateInUpLeft',
+    'source/rotating_entrances/rotateInUpRight',
+    // Rotating exits
+    'source/rotating_exits/rotateOut',
+    'source/rotating_exits/rotateOutDownLeft',
+    'source/rotating_exits/rotateOutDownRight',
+    'source/rotating_exits/rotateOutUpLeft',
+    'source/rotating_exits/rotateOutUpRight',
+    // Specials
+    'source/specials/hinge',
+    'source/specials/jackInTheBox',
+    'source/specials/rollIn',
+    'source/specials/rollOut',
+    // Zooming entrances
+    'source/zooming_entrances/zoomIn',
+    'source/zooming_entrances/zoomInDown',
+    'source/zooming_entrances/zoomInLeft',
+    'source/zooming_entrances/zoomInRight',
+    'source/zooming_entrances/zoomInUp',
+    // Zooming exits
+    'source/zooming_exits/zoomOut',
+    'source/zooming_exits/zoomOutDown',
+    'source/zooming_exits/zoomOutLeft',
+    'source/zooming_exits/zoomOutRight',
+    'source/zooming_exits/zoomOutUp',
+    // Sliding entrances
+    'source/sliding_entrances/slideInDown',
+    'source/sliding_entrances/slideInLeft',
+    'source/sliding_entrances/slideInRight',
+    'source/sliding_entrances/slideInUp',
+    // Sliding exits
+    'source/sliding_exits/slideOutDown',
+    'source/sliding_exits/slideOutLeft',
+    'source/sliding_exits/slideOutRight',
+    'source/sliding_exits/slideOutUp'
+  )
+);

@@ -1,0 +1,9 @@
+@use '../utils/variables' as *;
+
+:where(:root) {
+  font-family: $font-sans;
+}
+
+:where(code, kbd, samp, pre) {
+  font-family: $font-mono;
+}

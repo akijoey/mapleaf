@@ -1,0 +1,24 @@
+@use '../utils/variables' as *;
+@use '../utils/extends' as *;
+
+:where(button) {
+  @extend %initial;
+
+  display: inline-grid;
+  place-content: center;
+  height: 2.5rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  background-color: white;
+  border-radius: $radius-sm;
+  box-shadow: $shadow-md;
+  transition: all $duration-fast;
+
+  &:hover {
+    box-shadow: $shadow-xs;
+  }
+
+  &:active {
+    box-shadow: $shadow-xl;
+  }
+}

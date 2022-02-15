@@ -1,0 +1,23 @@
+@use '../utils/variables' as *;
+
+:where(:root) {
+  @media (prefers-reduced-motion: no-preference) {
+    scroll-behavior: smooth;
+  }
+}
+
+:where(body) {
+  font-size: $font-md;
+  font-weight: $font-normal;
+  color: $gray-600;
+}
+
+:where(a) {
+  color: currentcolor;
+  text-decoration: none;
+  transition: all $duration-base;
+
+  &:hover {
+    color: $blue-500;
+  }
+}

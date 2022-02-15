@@ -1,0 +1,21 @@
+@use 'sass:meta';
+@use 'sass:math';
+@use 'variables' as *;
+
+@function trim-unit($number) {
+  @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+    @return math.div($number, $number * 0 + 1);
+  }
+  @return $number;
+}
+
+@function pxtorem($number) {
+  @if not math.is-unitless($number) {
+    @if math.unit($number) != 'px' {
+      @return $number;
+    }
+
+    $number: trim-unit($number);
+  }
+  @return math.div($number, $slice-width) * 1rem;
+}

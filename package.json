@@ -1,0 +1,47 @@
+{
+  "name": "mapleaf",
+  "version": "1.0.0",
+  "description": "A modern CSS framework.",
+  "keywords": [
+    "stylus"
+  ],
+  "repository": "github:akijoey/mapleaf",
+  "homepage": "https://github.com/akijoey/mapleaf#readme",
+  "bugs": "https://github.com/akijoey/mapleaf/issues",
+  "author": "AkiJoey <akijoey@akijoey.com> (https://akijoey.com)",
+  "license": "MIT",
+  "main": "dist/mapleaf.css",
+  "style": "dist/mapleaf.css",
+  "files": [
+    "src/",
+    "dist/"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "compile": "sass src/index.scss dist/mapleaf.css",
+    "start": "npm run compile -- -w",
+    "prebuild": "npm run clean",
+    "build": "npm run compile -- --no-source-map -s compressed",
+    "postbuild": "postcss dist/mapleaf.css -r --no-map",
+    "lint": "devkit lint",
+    "test": "devkit test",
+    "format": "devkit format",
+    "prepare": "devkit prepare",
+    "release": "devkit release"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "sanitize.css": "^13.0.0"
+  },
+  "devDependencies": {
+    "@akijoey/devkit": "latest",
+    "cssnano": "^5.0.17",
+    "postcss": "^8.4.6",
+    "postcss-banner": "^4.0.1",
+    "postcss-cli": "^9.1.0",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.3.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.42.1"
+  }
+}

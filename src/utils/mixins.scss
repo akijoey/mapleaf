@@ -1,0 +1,75 @@
+@use 'sass:meta';
+@use 'variables' as *;
+
+@mixin load-module($name, $paths) {
+  $prefix: '../../node_modules';
+  @each $path in $paths {
+    $url: '#{$prefix}/#{$name}/#{$path}';
+    @include meta.load-css($url);
+  }
+}
+
+@mixin from($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+@mixin util($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+@mixin between($from, $util) {
+  @media screen and (min-width: $from) and (max-width: $util) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @include util($breakpoint-sm) {
+    @content;
+  }
+}
+@mixin tablet {
+  @include between($breakpoint-sm, $breakpoint-md) {
+    @content;
+  }
+}
+@mixin laptop {
+  @include between($breakpoint-md, $breakpoint-lg) {
+    @content;
+  }
+}
+@mixin desktop {
+  @include from($breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin animated($duration: $duration-base) {
+  animation-duration: $duration;
+  animation-fill-mode: both;
+}
+
+@mixin fixed-center {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+@mixin clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

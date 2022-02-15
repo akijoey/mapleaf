@@ -1,0 +1,14 @@
+@use 'sass:math';
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+$slice-count: math.div($design-width, $slice-width);
+
+:where(:root) {
+  font-size: 16px;
+
+  @include mobile {
+    font-size: math.div(100vw, $slice-count);
+  }
+}

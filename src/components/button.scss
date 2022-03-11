@@ -6,13 +6,14 @@
 
   display: inline-grid;
   place-content: center;
-  height: 2.5rem;
+  height: 2rem;
   padding: 0 1rem;
+  font-size: $font-sm;
+  font-weight: $font-medium;
   cursor: pointer;
-  background-color: white;
   border-radius: $radius-sm;
   box-shadow: $shadow-md;
-  transition: all $duration-fast;
+  transition: $duration-fast;
 
   &:hover {
     box-shadow: $shadow-xs;

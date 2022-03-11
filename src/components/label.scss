@@ -1,0 +1,6 @@
+@use '../utils/variables' as *;
+
+:where(label) {
+  font-weight: $font-semibold;
+  cursor: pointer;
+}

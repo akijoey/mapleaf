@@ -8,6 +8,9 @@
 @forward 'base/adaptive';
 
 // import components
+@forward 'components/label';
+@forward 'components/input';
+@forward 'components/select';
 @forward 'components/button';
 @forward 'components/dialog';
 @forward 'components/progress';

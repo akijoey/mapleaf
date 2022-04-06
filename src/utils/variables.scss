@@ -1,4 +1,7 @@
 @use 'sass:math';
+@use 'colors' as *;
+
+@forward 'colors';
 
 // adaptive
 $design-width: 750 !default;
@@ -22,6 +25,7 @@ $shadow-sm: 0 1.5px 10px 1.5px rgba(0 0 0 / 15%) !default;
 $shadow-md: 0 1.5px 8px 1px rgba(0 0 0 / 20%) !default;
 $shadow-lg: 0 1.5px 6px 0.5px rgba(0 0 0 / 25%) !default;
 $shadow-xl: 0 1.5px 4px 0 rgba(0 0 0 / 30%) !default;
+$shadow-focus: 0 0 0 0.15rem rgba($blue-500, 0.2) !default;
 
 // transition
 $duration-fast: 100ms !default;
@@ -53,91 +57,3 @@ $font-semibold: 600 !default;
 $font-bold: 700 !default;
 $font-extrabold: 800 !default;
 $font-black: 900 !default;
-
-// color gray
-$gray-100: #f3f4f6 !default;
-$gray-200: #e5e7eb !default;
-$gray-300: #d1d5db !default;
-$gray-400: #9ca3af !default;
-$gray-500: #6b7280 !default;
-$gray-600: #4b5563 !default;
-$gray-700: #374151 !default;
-$gray-800: #1f2937 !default;
-$gray-900: #111827 !default;
-
-// color red
-$red-100: #fee2e2 !default;
-$red-200: #fecaca !default;
-$red-300: #fca5a5 !default;
-$red-400: #f87171 !default;
-$red-500: #ef4444 !default;
-$red-600: #dc2626 !default;
-$red-700: #b91c1c !default;
-$red-800: #991b1b !default;
-$red-900: #7f1d1d !default;
-
-// color orange
-$orange-100: #ffedd5 !default;
-$orange-200: #fed7aa !default;
-$orange-300: #fdba74 !default;
-$orange-400: #fb923c !default;
-$orange-500: #f97316 !default;
-$orange-600: #ea580c !default;
-$orange-700: #c2410c !default;
-$orange-800: #9a3412 !default;
-$orange-900: #7c2d12 !default;
-
-// color yellow
-$yellow-100: #fef9c3 !default;
-$yellow-200: #fef08a !default;
-$yellow-300: #fde047 !default;
-$yellow-400: #facc15 !default;
-$yellow-500: #eab308 !default;
-$yellow-600: #ca8a04 !default;
-$yellow-700: #a16207 !default;
-$yellow-800: #854d0e !default;
-$yellow-900: #713f12 !default;
-
-// color green
-$green-100: #dcfce7 !default;
-$green-200: #bbf7d0 !default;
-$green-300: #86efac !default;
-$green-400: #4ade80 !default;
-$green-500: #22c55e !default;
-$green-600: #16a34a !default;
-$green-700: #15803d !default;
-$green-800: #166534 !default;
-$green-900: #14532d !default;
-
-// color cyan
-$cyan-100: #cffafe !default;
-$cyan-200: #a5f3fc !default;
-$cyan-300: #67e8f9 !default;
-$cyan-400: #22d3ee !default;
-$cyan-500: #06b6d4 !default;
-$cyan-600: #0891b2 !default;
-$cyan-700: #0e7490 !default;
-$cyan-800: #155e75 !default;
-$cyan-900: #164e63 !default;
-
-// color blue
-$blue-100: #dbeafe !default;
-$blue-200: #bfdbfe !default;
-$blue-300: #93c5fd !default;
-$blue-400: #60a5fa !default;
-$blue-500: #3b82f6 !default;
-$blue-600: #2563eb !default;
-$blue-700: #1d4ed8 !default;
-$blue-800: #1e40af !default;
-$blue-900: #1e3a8a !default;
-
-// color purple
-$purple-100: #f3e8ff !default;
-$purple-200: #e9d5ff !default;
-$purple-300: #d8b4fe !default;
-$purple-400: #c084fc !default;
-$purple-500: #a855f7 !default;
-$purple-600: #9333ea !default;
-$purple-700: #7e22ce !default;
-$purple-800: #6b21a8 !default;
-$purple-900: #581c87 !default;

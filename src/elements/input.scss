@@ -1,0 +1,231 @@
+@use '../utils/variables' as *;
+@use '../utils/extends' as *;
+@use '../utils/icons' as *;
+
+:where(input) {
+  transition: $duration-fast;
+  @extend %control;
+
+  // button type
+  &[type='button' i],
+  &[type='submit' i],
+  &[type='reset' i] {
+    @extend %button;
+  }
+
+  // text type
+  &:not([type]),
+  &[type='text' i],
+  &[type='password' i],
+  &[type='email' i],
+  &[type='tel' i],
+  &[type='url' i] {
+    width: 100%;
+    height: 2rem;
+    padding: 0 0.75rem;
+    font-size: $font-sm;
+    line-height: 2rem;
+    border-radius: $radius-sm;
+    @extend %text;
+  }
+
+  &[type='number' i] {
+    &::-webkit-inner-spin-button {
+      cursor: pointer;
+    }
+  }
+
+  // file type
+  &[type='file' i] {
+    width: 100%;
+    height: 2rem;
+    padding-right: 0.75rem;
+    font-size: $font-sm;
+    line-height: 1.875rem;
+    cursor: pointer;
+    border-radius: $radius-sm;
+
+    &::file-selector-button {
+      height: 100%;
+      padding: 0 1rem;
+      margin-inline-end: 0.75rem;
+      font-weight: $font-medium;
+      color: $white;
+      cursor: pointer;
+      background-color: $gray-500;
+      border: none;
+      transition: $duration-fast;
+      appearance: none;
+    }
+
+    &:hover,
+    &:focus-visible {
+      &::file-selector-button {
+        background-color: $blue-500;
+      }
+    }
+  }
+
+  // check type
+  &[type='checkbox' i],
+  &[type='radio' i] {
+    width: 1em;
+    height: 1em;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    appearance: none;
+  }
+
+  &[type='checkbox' i] {
+    background-image: icon-check(transparent);
+    border-radius: $radius-xs;
+
+    &[role='switch' i] {
+      width: 2em;
+      background-image: icon-circle($gray-500, 3);
+      background-position: left center;
+      border-radius: 0.5em;
+      transition: $duration-base;
+
+      &:hover,
+      &:focus-visible {
+        background-image: icon-circle($blue-500, 3);
+      }
+
+      &:checked {
+        background-image: icon-circle($white, 3);
+        background-position: right center;
+      }
+    }
+
+    &:indeterminate,
+    &:checked {
+      background-color: $blue-500;
+      border-color: $blue-500;
+    }
+
+    &:indeterminate {
+      background-image: icon-minus($white);
+    }
+
+    &:checked {
+      background-image: icon-check($white);
+    }
+  }
+
+  &[type='radio' i] {
+    background-image: icon-circle(transparent);
+    border-radius: 0.5em;
+
+    &:checked {
+      background-image: icon-circle($blue-500);
+      border-color: $blue-500;
+    }
+
+    &:disabled {
+      background-image: none;
+    }
+  }
+
+  // range type
+  &[type='range' i] {
+    width: 100%;
+    height: 1rem;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+    appearance: none;
+
+    @mixin range-thumb {
+      width: 1rem;
+      height: 1rem;
+      background-color: $blue-500;
+      background-image: icon-circle($white);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border-radius: 1rem;
+      transition: $duration-fast;
+      appearance: none;
+
+      &:active {
+        background-color: $blue-300;
+      }
+    }
+
+    @mixin range-track {
+      width: 100%;
+      height: 0.375rem;
+      background-color: $gray-300;
+      border-radius: 1rem;
+    }
+
+    &::-webkit-slider-thumb {
+      margin-top: -0.3125rem;
+      @include range-thumb;
+    }
+
+    &::-webkit-slider-runnable-track {
+      @include range-track;
+    }
+
+    &::-moz-range-thumb {
+      @include range-thumb;
+    }
+
+    &::-moz-range-track {
+      @include range-track;
+    }
+
+    &:disabled {
+      background-color: transparent;
+
+      &::-webkit-slider-thumb {
+        background-color: $gray-500;
+      }
+
+      &::-moz-range-thumb {
+        background-color: $gray-500;
+      }
+    }
+
+    &:focus-visible {
+      &::-webkit-slider-thumb {
+        box-shadow: $shadow-focus;
+      }
+
+      &::-moz-range-thumb {
+        box-shadow: $shadow-focus;
+      }
+    }
+  }
+
+  // color type
+  &[type='color' i] {
+    width: 3rem;
+    padding: 0.375rem;
+    cursor: pointer;
+    border-radius: $radius-sm;
+
+    @mixin color-swatch {
+      height: 1rem;
+      border: thin solid $gray-500;
+      border-radius: $radius-xs;
+    }
+
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+      @include color-swatch;
+    }
+
+    &::-moz-color-swatch {
+      @include color-swatch;
+    }
+  }
+}

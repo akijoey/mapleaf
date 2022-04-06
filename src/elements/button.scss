@@ -1,0 +1,6 @@
+@use '../utils/variables' as *;
+@use '../utils/extends' as *;
+
+:where(button) {
+  @extend %button;
+}

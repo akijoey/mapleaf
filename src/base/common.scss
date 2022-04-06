@@ -9,15 +9,27 @@
 :where(body) {
   font-size: $font-md;
   font-weight: $font-normal;
-  color: $gray-600;
+  color: $gray-700;
+}
+
+:where(button, input, select, textarea) {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  background-color: transparent;
+  border: thin solid $gray-500;
 }
 
 :where(a) {
   color: currentcolor;
   text-decoration: none;
-  transition: all $duration-base;
+  transition: $duration-base;
 
   &:hover {
     color: $blue-500;
   }
+}
+
+:where([role='button' i]) {
+  cursor: pointer;
 }

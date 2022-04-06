@@ -1,0 +1,69 @@
+@use '../utils/variables' as *;
+@use '../utils/extends' as *;
+
+:where(progress) {
+  position: relative;
+  width: 100%;
+  height: 0.75rem;
+  overflow: hidden;
+  border-radius: $radius-sm;
+  appearance: none;
+
+  @mixin progress-bar {
+    background-color: $gray-300;
+  }
+
+  @mixin progress-value {
+    background-color: $blue-500;
+    background-image: linear-gradient(
+      45deg,
+      rgba($white, 0.15) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba($white, 0.15) 50%,
+      rgba($white, 0.15) 75%,
+      transparent 75%,
+      transparent
+    );
+    background-size: 0.75rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: $duration-slow;
+  }
+
+  &::-webkit-progress-bar {
+    @include progress-bar;
+  }
+
+  &::-webkit-progress-value {
+    @include progress-value;
+  }
+
+  &::-moz-progress-bar {
+    @include progress-value;
+  }
+
+  &::-ms-fill {
+    border: none;
+    @include progress-value;
+  }
+
+  @keyframes progress-indeterminate {
+    from {
+      transform: translateX(-100%);
+    }
+
+    to {
+      transform: translateX(400%);
+    }
+  }
+
+  &:indeterminate::before {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    content: '';
+    background-color: $blue-500;
+    border-radius: 0.5rem;
+    animation: 1s linear infinite progress-indeterminate;
+  }
+}

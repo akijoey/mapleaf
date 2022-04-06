@@ -1,0 +1,35 @@
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+
+$xmlns: 'http://www.w3.org/2000/svg';
+
+@function icon-arrow($color: $black) {
+  @return svg-to-data-url(
+    "<svg xmlns='#{$xmlns}' viewBox='0 0 16 16'>" +
+      "<path fill='none' stroke='#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/>" +
+      '</svg>'
+  );
+}
+
+@function icon-check($color: $black) {
+  @return svg-to-data-url(
+    "<svg xmlns='#{$xmlns}' viewBox='0 0 20 20'>" +
+      "<path fill='none' stroke='#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/>" +
+      '</svg>'
+  );
+}
+
+@function icon-minus($color: $black) {
+  @return svg-to-data-url(
+    "<svg xmlns='#{$xmlns}' viewBox='0 0 20 20'>" +
+      "<path fill='none' stroke='#{$color}' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/>" +
+      '</svg>'
+  );
+}
+
+@function icon-circle($color: $black, $radius: 2) {
+  @return svg-to-data-url(
+    "<svg xmlns='#{$xmlns}' viewBox='-4 -4 8 8'>" +
+      "<circle r='#{$radius}' fill='#{$color}'/>" + '</svg>'
+  );
+}

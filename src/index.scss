@@ -7,10 +7,12 @@
 @forward 'base/typography';
 @forward 'base/adaptive';
 
-// import components
-@forward 'components/label';
-@forward 'components/input';
-@forward 'components/select';
-@forward 'components/button';
-@forward 'components/dialog';
-@forward 'components/progress';
+// import elements
+@forward 'elements/label';
+@forward 'elements/input';
+@forward 'elements/select';
+@forward 'elements/option';
+@forward 'elements/button';
+@forward 'elements/dialog';
+@forward 'elements/progress';
+@forward 'elements/textarea';

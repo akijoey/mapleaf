@@ -1,0 +1,12 @@
+@use '../utils/variables' as *;
+@use '../utils/extends' as *;
+
+:where(textarea) {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  border-radius: $radius-sm;
+  transition: $duration-fast;
+  appearance: none;
+  @extend %text;
+  @extend %control;
+}

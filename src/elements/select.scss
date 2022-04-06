@@ -1,0 +1,25 @@
+@use '../utils/variables' as *;
+@use '../utils/extends' as *;
+@use '../utils/icons' as *;
+
+:where(select) {
+  width: 100%;
+  height: 2rem;
+  padding: 0 2.25rem 0 0.75rem;
+  font-size: $font-sm;
+  cursor: pointer;
+  background-image: icon-arrow($gray-800);
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem 0.75rem;
+  border-radius: $radius-sm;
+  transition: $duration-fast;
+  appearance: none;
+  @extend %control;
+
+  &[multiple] {
+    height: auto;
+    padding: 0;
+    background-image: none;
+  }
+}

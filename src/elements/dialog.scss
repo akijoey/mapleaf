@@ -1,19 +1,17 @@
 @use '../utils/variables' as *;
-@use '../utils/extends' as *;
 @use '../utils/mixins' as *;
 
 :where(dialog) {
-  @extend %initial;
-  @include fixed-center;
-  @include animated;
-
   padding: 1rem;
   background-color: white;
+  border: none;
   border-radius: $radius-md;
   box-shadow: $shadow-md;
   transition: $duration-fast;
+  @include fixed-center;
+  @include animated;
 
-  &:hover {
-    box-shadow: $shadow-xs;
+  &::backdrop {
+    background-color: rgba($black, 0.2);
   }
 }

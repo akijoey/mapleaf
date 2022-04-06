@@ -1,15 +1,20 @@
 @use 'sass:meta';
 @use 'sass:math';
+@use 'sass:string';
 @use 'variables' as *;
 
+@function is-number($number) {
+  @return meta.type-of($number) == 'number';
+}
+
 @function trim-unit($number) {
-  @if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+  @if is-number($number) and not math.is-unitless($number) {
     @return math.div($number, $number * 0 + 1);
   }
   @return $number;
 }
 
-@function pxtorem($number) {
+@function px-to-rem($number) {
   @if not math.is-unitless($number) {
     @if math.unit($number) != 'px' {
       @return $number;
@@ -18,4 +23,33 @@
     $number: trim-unit($number);
   }
   @return math.div($number, $slice-width) * 1rem;
+}
+
+@function str-replace($string, $search, $replace: '') {
+  $index: string.index($string, $search);
+  @if $index {
+    @return string.slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        string.slice($string, $index + string.length($search)),
+        $search,
+        $replace
+      );
+  }
+  @return $string;
+}
+
+@function url-encode($url) {
+  $encode-map: (
+    '<': '%3c',
+    '>': '%3e',
+    '#': '%23'
+  );
+  @each $search, $replace in $encode-map {
+    $url: str-replace($url, $search, $replace);
+  }
+  @return $url;
+}
+
+@function svg-to-data-url($svg) {
+  @return url('data:image/svg+xml,#{url-encode($svg)}');
 }

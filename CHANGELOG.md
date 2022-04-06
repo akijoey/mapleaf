@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/akijoey/mapleaf/compare/v1.0.1...v1.1.0) (2022-04-06)
+
+
+### Features
+
+* form style ([abe8879](https://github.com/akijoey/mapleaf/commit/abe88797e8fe292e674bade27598f8c40e13a98b))
+
 ## [1.0.1](https://github.com/akijoey/mapleaf/compare/v1.0.0...v1.0.1) (2022-03-11)
 
 

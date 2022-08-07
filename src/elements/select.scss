@@ -1,4 +1,6 @@
 @use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
 @use '../utils/extends' as *;
 @use '../utils/icons' as *;
 
@@ -8,7 +10,6 @@
   padding: 0 2.25rem 0 0.75rem;
   font-size: $font-sm;
   cursor: pointer;
-  background-image: icon-arrow($gray-800);
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 1rem 0.75rem;
@@ -17,9 +18,14 @@
   appearance: none;
   @extend %control;
 
+  @include themeify {
+    background-image: icon-arrow(themed('dark'));
+  }
+
   &[multiple] {
     height: auto;
     padding: 0;
+    overflow: overlay;
     background-image: none;
   }
 }

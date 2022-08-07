@@ -1,15 +1,21 @@
 @use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
 
 :where(:root) {
-  @media (prefers-reduced-motion: no-preference) {
-    scroll-behavior: smooth;
-  }
+  overflow: overlay;
+  scroll-behavior: smooth;
+  color-scheme: light dark;
 }
 
 :where(body) {
   font-size: $font-md;
   font-weight: $font-normal;
-  color: $gray-700;
+
+  @include themeify {
+    color: themed('dark');
+    background-color: themed('light');
+  }
 }
 
 :where(button, input, select, textarea) {
@@ -32,4 +38,20 @@
 
 :where([role='button' i]) {
   cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: transparent;
+
+  &-thumb {
+    border-radius: $radius-xs;
+    background-size: 0.5rem 0.5rem;
+    @include gradient-striped(-45deg);
+
+    @include themeify {
+      background-color: themed('primary');
+    }
+  }
 }

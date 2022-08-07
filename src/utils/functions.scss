@@ -1,7 +1,12 @@
+@use 'sass:map';
 @use 'sass:meta';
 @use 'sass:math';
 @use 'sass:string';
 @use 'variables' as *;
+
+@function themed($key) {
+  @return map.get($theme, $key);
+}
 
 @function is-number($number) {
   @return meta.type-of($number) == 'number';
@@ -52,4 +57,8 @@
 
 @function svg-to-data-url($svg) {
   @return url('data:image/svg+xml,#{url-encode($svg)}');
+}
+
+@function shadow-focus($color) {
+  @return 0 0 0 0.15rem rgba($color, 0.2);
 }

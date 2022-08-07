@@ -1,0 +1,61 @@
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/extends' as *;
+@use '../utils/mixins' as *;
+
+:where(meter) {
+  @extend %progress;
+
+  @mixin meter-bar {
+    background-color: $gray-300;
+  }
+
+  @mixin meter-value($level) {
+    background-size: 0.75rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: $duration-slow;
+    @include gradient-striped;
+
+    @include themeify {
+      background-color: themed($level);
+    }
+  }
+
+  &::-webkit-meter-inner-element {
+    display: block;
+  }
+
+  &::-webkit-meter-bar {
+    border: none;
+    border-radius: 0;
+    @include meter-bar;
+  }
+
+  &::-webkit-meter-optimum-value {
+    @include meter-value('success');
+  }
+
+  &::-webkit-meter-suboptimum-value {
+    @include meter-value('warning');
+  }
+
+  &::-webkit-meter-even-less-good-value {
+    @include meter-value('danger');
+  }
+
+  &::-moz-meter-bar {
+    @include meter-bar;
+  }
+
+  &:-moz-meter-optimum::-moz-meter-bar {
+    @include meter-value('success');
+  }
+
+  &:-moz-meter-sub-optimum::-moz-meter-bar {
+    @include meter-value('warning');
+  }
+
+  &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+    @include meter-value('danger');
+  }
+}

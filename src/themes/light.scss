@@ -1,0 +1,12 @@
+@use '../utils/colors' as *;
+
+$theme-light: (
+  'primary': $blue,
+  'secondary': $gray,
+  'success': $green,
+  'info': $cyan,
+  'warning': $yellow,
+  'danger': $red,
+  'light': $gray-100,
+  'dark': $gray-900
+);

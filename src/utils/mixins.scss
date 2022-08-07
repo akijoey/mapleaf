@@ -9,6 +9,29 @@
   }
 }
 
+@mixin darkmode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin themeify {
+  $theme: $theme-light !global;
+  @content;
+
+  @include darkmode {
+    $theme: $theme-dark !global;
+    @content;
+  }
+
+  @each $key, $value in $theme-map {
+    :where(:root)[data-theme='#{$key}' i] & {
+      $theme: $value !global;
+      @content;
+    }
+  }
+}
+
 @mixin from($width) {
   @media screen and (min-width: $width) {
     @content;
@@ -72,4 +95,17 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@mixin gradient-striped($angle: 45deg, $color: rgba($white, 0.2)) {
+  background-image: linear-gradient(
+    $angle,
+    $color 25%,
+    transparent 25%,
+    transparent 50%,
+    $color 50%,
+    $color 75%,
+    transparent 75%,
+    transparent
+  );
 }

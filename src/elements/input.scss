@@ -1,5 +1,7 @@
 @use '../utils/variables' as *;
+@use '../utils/functions' as *;
 @use '../utils/extends' as *;
+@use '../utils/mixins' as *;
 @use '../utils/icons' as *;
 
 :where(input) {
@@ -19,7 +21,14 @@
   &[type='password' i],
   &[type='email' i],
   &[type='tel' i],
-  &[type='url' i] {
+  &[type='url' i],
+  &[type='number' i],
+  &[type='search' i],
+  &[type='date' i],
+  &[type='datetime-local' i],
+  &[type='month' i],
+  &[type='week' i],
+  &[type='time' i] {
     width: 100%;
     height: 2rem;
     padding: 0 0.75rem;
@@ -32,6 +41,14 @@
   &[type='number' i] {
     &::-webkit-inner-spin-button {
       cursor: pointer;
+      // appearance: none;
+    }
+  }
+
+  &[type='search' i] {
+    &::-webkit-search-cancel-button {
+      cursor: pointer;
+      transition: $duration-fast;
     }
   }
 
@@ -58,10 +75,12 @@
       appearance: none;
     }
 
-    &:hover,
-    &:focus-visible {
-      &::file-selector-button {
-        background-color: $blue-500;
+    @include themeify {
+      &:hover,
+      &:focus-visible {
+        &::file-selector-button {
+          background-color: themed('primary');
+        }
       }
     }
   }
@@ -84,26 +103,32 @@
 
     &[role='switch' i] {
       width: 2em;
-      background-image: icon-circle($gray-500, 3);
+      background-image: icon-circle($gray, 3);
       background-position: left center;
       border-radius: 0.5em;
       transition: $duration-base;
-
-      &:hover,
-      &:focus-visible {
-        background-image: icon-circle($blue-500, 3);
-      }
 
       &:checked {
         background-image: icon-circle($white, 3);
         background-position: right center;
       }
+
+      @include themeify {
+        &:not(:checked) {
+          &:hover,
+          &:focus-visible {
+            background-image: icon-circle(themed('primary'), 3);
+          }
+        }
+      }
     }
 
-    &:indeterminate,
-    &:checked {
-      background-color: $blue-500;
-      border-color: $blue-500;
+    @include themeify {
+      &:indeterminate,
+      &:checked {
+        background-color: themed('primary');
+        border-color: themed('primary');
+      }
     }
 
     &:indeterminate {
@@ -119,13 +144,15 @@
     background-image: icon-circle(transparent);
     border-radius: 0.5em;
 
-    &:checked {
-      background-image: icon-circle($blue-500);
-      border-color: $blue-500;
-    }
-
     &:disabled {
       background-image: none;
+    }
+
+    @include themeify {
+      &:checked {
+        background-image: icon-circle(themed('primary'));
+        border-color: themed('primary');
+      }
     }
   }
 
@@ -136,13 +163,11 @@
     padding: 0;
     cursor: pointer;
     border: none;
-    box-shadow: none;
     appearance: none;
 
     @mixin range-thumb {
       width: 1rem;
       height: 1rem;
-      background-color: $blue-500;
       background-image: icon-circle($white);
       background-repeat: no-repeat;
       background-position: center;
@@ -151,8 +176,16 @@
       transition: $duration-fast;
       appearance: none;
 
-      &:active {
-        background-color: $blue-300;
+      @include themeify {
+        background-color: themed('primary');
+
+        &:hover {
+          background-color: lighten(themed('primary'), 10%);
+        }
+
+        &:active {
+          background-color: darken(themed('primary'), 10%);
+        }
       }
     }
 
@@ -184,21 +217,23 @@
       background-color: transparent;
 
       &::-webkit-slider-thumb {
-        background-color: $gray-500;
+        background-color: $gray;
       }
 
       &::-moz-range-thumb {
-        background-color: $gray-500;
+        background-color: $gray;
       }
     }
 
     &:focus-visible {
+      box-shadow: none;
+
       &::-webkit-slider-thumb {
-        box-shadow: $shadow-focus;
+        box-shadow: shadow-focus($blue);
       }
 
       &::-moz-range-thumb {
-        box-shadow: $shadow-focus;
+        box-shadow: shadow-focus($blue);
       }
     }
   }
@@ -214,6 +249,7 @@
       height: 1rem;
       border: thin solid $gray-500;
       border-radius: $radius-xs;
+      transition: $duration-fast;
     }
 
     &::-webkit-color-swatch-wrapper {

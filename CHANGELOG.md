@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/akijoey/mapleaf/compare/v1.1.0...v1.2.0) (2022-08-07)
+
+
+### Features
+
+* theme style ([e8ba6c4](https://github.com/akijoey/mapleaf/commit/e8ba6c412f07dd33cc55136e891051adacf554f9))
+
 # [1.1.0](https://github.com/akijoey/mapleaf/compare/v1.0.1...v1.1.0) (2022-04-06)
 
 

@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/akijoey/mapleaf/compare/v1.2.0...v1.2.1) (2023-02-10)
+
+
+### Bug Fixes
+
+* build badge ([2f93cc9](https://github.com/akijoey/mapleaf/commit/2f93cc99bfd422cda9b819dfe5b424be55f47dba))
+
 # [1.2.0](https://github.com/akijoey/mapleaf/compare/v1.1.0...v1.2.0) (2022-08-07)
 
 

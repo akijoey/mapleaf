@@ -46,8 +46,8 @@
   background-color: transparent;
 
   &-thumb {
-    border-radius: $radius-xs;
     background-size: 0.5rem 0.5rem;
+    border-radius: $radius-xs;
     @include gradient-striped(-45deg);
 
     @include themeify {

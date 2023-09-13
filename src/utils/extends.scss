@@ -59,17 +59,17 @@
   }
 
   @include themeify {
-    border-color: themed('primary');
     background-color: themed('primary');
+    border-color: themed('primary');
 
     &:hover {
-      border-color: lighten(themed('primary'), 10%);
       background-color: lighten(themed('primary'), 10%);
+      border-color: lighten(themed('primary'), 10%);
     }
 
     &:active {
-      border-color: darken(themed('primary'), 10%);
       background-color: darken(themed('primary'), 10%);
+      border-color: darken(themed('primary'), 10%);
     }
 
     &:focus-visible {
@@ -77,8 +77,8 @@
     }
 
     &:disabled {
-      border-color: lighten(themed('primary'), 20%);
       background-color: lighten(themed('primary'), 20%);
+      border-color: lighten(themed('primary'), 20%);
     }
   }
 }

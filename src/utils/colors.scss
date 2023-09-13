@@ -1,10 +1,10 @@
 @use 'sass:color';
 
 // black
-$black: #000;
+$black: #000 !default;
 
 // white
-$white: #fff;
+$white: #fff !default;
 
 // gray
 $gray-100: #f8f9fa !default;
@@ -16,7 +16,7 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
-$gray: $gray-500;
+$gray: $gray-500 !default;
 
 // blue
 $blue-100: #cfe2ff !default;
@@ -28,7 +28,7 @@ $blue-600: #0a58ca !default;
 $blue-700: #084298 !default;
 $blue-800: #052c65 !default;
 $blue-900: #031633 !default;
-$blue: $blue-500;
+$blue: $blue-500 !default;
 
 // indigo
 $indigo-100: #e0cffc !default;
@@ -40,7 +40,7 @@ $indigo-600: #520dc2 !default;
 $indigo-700: #3d0a91 !default;
 $indigo-800: #290661 !default;
 $indigo-900: #140330 !default;
-$indigo: $indigo-500;
+$indigo: $indigo-500 !default;
 
 // purple
 $purple-100: #e2d9f3 !default;
@@ -52,7 +52,7 @@ $purple-600: #59359a !default;
 $purple-700: #432874 !default;
 $purple-800: #2c1a4d !default;
 $purple-900: #160d27 !default;
-$purple: $purple-500;
+$purple: $purple-500 !default;
 
 // pink
 $pink-100: #f7d6e6 !default;
@@ -64,7 +64,7 @@ $pink-600: #ab296a !default;
 $pink-700: #801f4f !default;
 $pink-800: #561435 !default;
 $pink-900: #2b0a1a !default;
-$pink: $pink-500;
+$pink: $pink-500 !default;
 
 // red
 $red-100: #f8d7da !default;
@@ -76,7 +76,7 @@ $red-600: #b02a37 !default;
 $red-700: #842029 !default;
 $red-800: #58151c !default;
 $red-900: #2c0b0e !default;
-$red: $red-500;
+$red: $red-500 !default;
 
 // orange
 $orange-100: #ffe5d0 !default;
@@ -88,7 +88,7 @@ $orange-600: #ca6510 !default;
 $orange-700: #984c0c !default;
 $orange-800: #653208 !default;
 $orange-900: #331904 !default;
-$orange: $orange-500;
+$orange: $orange-500 !default;
 
 // yellow
 $yellow-100: #fff3cd !default;
@@ -100,7 +100,7 @@ $yellow-600: #cc9a06 !default;
 $yellow-700: #997404 !default;
 $yellow-800: #664d03 !default;
 $yellow-900: #332701 !default;
-$yellow: $yellow-500;
+$yellow: $yellow-500 !default;
 
 // green
 $green-100: #d1e7dd !default;
@@ -112,7 +112,7 @@ $green-600: #146c43 !default;
 $green-700: #0f5132 !default;
 $green-800: #0a3622 !default;
 $green-900: #051b11 !default;
-$green: $green-500;
+$green: $green-500 !default;
 
 // teal
 $teal-100: #d2f4ea !default;
@@ -124,7 +124,7 @@ $teal-600: #1aa179 !default;
 $teal-700: #13795b !default;
 $teal-800: #0d503c !default;
 $teal-900: #06281e !default;
-$teal: $teal-500;
+$teal: $teal-500 !default;
 
 // cyan
 $cyan-100: #cff4fc !default;
@@ -136,4 +136,4 @@ $cyan-600: #0aa2c0 !default;
 $cyan-700: #087990 !default;
 $cyan-800: #055160 !default;
 $cyan-900: #032830 !default;
-$cyan: $cyan-500;
+$cyan: $cyan-500 !default;

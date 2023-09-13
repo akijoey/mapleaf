@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/akijoey/mapleaf/compare/v1.2.1...v1.2.2) (2023-09-13)
+
+
+### Bug Fixes
+
+* default colors ([3489335](https://github.com/akijoey/mapleaf/commit/3489335fd03889c998bd58876f90927943181c7c))
+
 ## [1.2.1](https://github.com/akijoey/mapleaf/compare/v1.2.0...v1.2.1) (2023-02-10)
 
 

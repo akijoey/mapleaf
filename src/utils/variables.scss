@@ -31,6 +31,9 @@ $font-sm: 0.875rem !default;
 $font-md: 1rem !default;
 $font-lg: 1.125rem !default;
 $font-xl: 1.25rem !default;
+$font-2xl: 1.5rem !default;
+$font-3xl: 1.75rem !default;
+$font-4xl: 2rem !default;
 
 // font family
 $font-sans: -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto',
@@ -50,6 +53,24 @@ $font-semibold: 600 !default;
 $font-bold: 700 !default;
 $font-extrabold: 800 !default;
 $font-black: 900 !default;
+
+// letter spacing
+$letter-tightest: -0.1em !default;
+$letter-tighter: -0.05em !default;
+$letter-tight: -0.025em !default;
+$letter-normal: 0em !default;
+$letter-wide: 0.025em !default;
+$letter-wider: 0.05em !default;
+$letter-widest: 0.1em !default;
+
+// line height
+$line-none: 1 !default;
+$line-tight: 1.25 !default;
+$line-snug: 1.375 !default;
+$line-normal: 1.5 !default;
+$line-relaxed: 1.625 !default;
+$line-wide: 1.75 !default;
+$line-loose: 2 !default;
 
 // radius
 $radius-xs: 0.25rem !default;

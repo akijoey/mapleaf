@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/akijoey/mapleaf/compare/v1.2.2...v1.2.3) (2024-03-02)
+
+
+### Bug Fixes
+
+* letter and line ([4740150](https://github.com/akijoey/mapleaf/commit/474015049a22a36975fd331c767be01417eee349))
+
 ## [1.2.2](https://github.com/akijoey/mapleaf/compare/v1.2.1...v1.2.2) (2023-09-13)
 
 

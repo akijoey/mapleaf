@@ -56,7 +56,7 @@
   &[type='file' i] {
     width: 100%;
     height: 2rem;
-    padding-right: 0.75rem;
+    padding-inline-end: 0.75rem;
     font-size: $font-sm;
     line-height: 1.875rem;
     cursor: pointer;
@@ -90,11 +90,14 @@
   &[type='radio' i] {
     width: 1em;
     height: 1em;
-    cursor: pointer;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     appearance: none;
+
+    &:not(:disabled) {
+      cursor: pointer;
+    }
   }
 
   &[type='checkbox' i] {
@@ -197,7 +200,7 @@
     }
 
     &::-webkit-slider-thumb {
-      margin-top: -0.3125rem;
+      margin-block-start: -0.3125rem;
       @include range-thumb;
     }
 
@@ -262,6 +265,21 @@
 
     &::-moz-color-swatch {
       @include color-swatch;
+    }
+  }
+
+  // list
+  &[list] {
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1rem 0.75rem;
+
+    @include themeify {
+      background-image: icon-arrow(themed('dark'));
+    }
+
+    &::-webkit-calendar-picker-indicator {
+      visibility: hidden;
     }
   }
 }

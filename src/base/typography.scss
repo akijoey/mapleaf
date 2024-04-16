@@ -7,3 +7,35 @@
 :where(code, kbd, samp, pre) {
   font-family: $font-mono;
 }
+
+:where(abbr[title]) {
+  cursor: help;
+}
+
+:where(hr) {
+  margin-block: 1em;
+  border-color: $gray-700;
+  border-style: solid;
+}
+
+:where(hgroup) {
+  margin-block: 1em;
+}
+
+:where(ul) {
+  display: block;
+  padding-inline-start: 2em;
+}
+
+:where(blockquote) {
+  display: block;
+  margin: 1em 0;
+  padding: 1em;
+  border-inline-start: 0.25em solid $gray-700;
+  border-inline-end: none;
+
+  footer {
+    margin-block-start: 0.5em;
+    color: $gray-500;
+  }
+}

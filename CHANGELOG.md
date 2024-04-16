@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/akijoey/mapleaf/compare/v1.2.3...v1.2.4) (2024-04-16)
+
+
+### Bug Fixes
+
+* typography style ([67c7211](https://github.com/akijoey/mapleaf/commit/67c72115622d93d9c6e5269b4c2f8edc08963276))
+
 ## [1.2.3](https://github.com/akijoey/mapleaf/compare/v1.2.2...v1.2.3) (2024-03-02)
 
 

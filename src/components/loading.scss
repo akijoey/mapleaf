@@ -1,0 +1,31 @@
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+@use '../utils/icons' as *;
+
+:where([aria-busy='true']:not(input, select, textarea, html)) {
+  white-space: nowrap;
+
+  &::before {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    content: '';
+    background-size: 1em auto;
+    vertical-align: -0.125em;
+
+    @include themeify {
+      background-image: icon-loading(themed('dark'));
+    }
+  }
+
+  &:not(:empty) {
+    &::before {
+      margin-inline-end: 0.5rem;
+    }
+  }
+
+  &:empty {
+    text-align: center;
+  }
+}

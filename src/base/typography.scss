@@ -12,29 +12,47 @@
   cursor: help;
 }
 
-:where(hr) {
-  margin-block: 1em;
-  border-color: $gray-700;
-  border-style: solid;
-}
-
 :where(hgroup) {
   margin-block: 1em;
 }
 
-:where(ul) {
-  display: block;
+:where(address) {
+  margin-block: 1em;
+}
+
+:where(ul, ol) {
   padding-inline-start: 2em;
 }
 
+:where(dd) {
+  margin-inline-start: 2em;
+}
+
+:where(hr) {
+  margin-block: 1em;
+  border-top: 0.125em;
+  border-bottom: 0;
+  border-color: $gray-700;
+  border-style: solid;
+}
+
 :where(blockquote) {
-  display: block;
   margin: 1em 0;
   padding: 1em;
   border-inline-start: 0.25em solid $gray-700;
   border-inline-end: none;
 
   footer {
+    margin-block-start: 0.5em;
+    color: $gray-500;
+  }
+}
+
+:where(figure) {
+  margin-inline: 0;
+  text-align: center;
+
+  figcaption {
     margin-block-start: 0.5em;
     color: $gray-500;
   }

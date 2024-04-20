@@ -20,3 +20,6 @@
 @forward 'elements/textarea';
 @forward 'elements/fieldset';
 @forward 'elements/legend';
+
+// import components
+@forward 'components/loading.scss';

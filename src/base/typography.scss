@@ -20,6 +20,11 @@
   margin-block: 1em;
 }
 
+:where(menu) {
+  padding-inline-start: 2em;
+  list-style-type: none;
+}
+
 :where(ul, ol) {
   padding-inline-start: 2em;
 }

@@ -9,7 +9,6 @@
   height: 2rem;
   padding: 0 2.25rem 0 0.75rem;
   font-size: $font-sm;
-  cursor: pointer;
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 1rem 0.75rem;
@@ -20,6 +19,10 @@
 
   @include themeify {
     background-image: icon-arrow(themed('dark'));
+  }
+
+  &:not(:disabled):not([multiple]) {
+    cursor: pointer;
   }
 
   &[multiple] {

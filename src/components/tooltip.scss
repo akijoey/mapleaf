@@ -1,0 +1,111 @@
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+:where([data-tooltip]) {
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    display: block;
+    pointer-events: none;
+    transition: $duration-base;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &:hover,
+  &:focus-visible {
+    &::before,
+    &::after {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &::before {
+    padding: 0.25rem 0.5rem;
+    font-size: $font-sm;
+    font-weight: $font-medium;
+    white-space: nowrap;
+    content: attr(data-tooltip);
+    border-radius: $radius-sm;
+    transform: translate(-50%, -0.75rem);
+
+    @include themeify {
+      color: themed('light');
+      background-color: themed('dark');
+    }
+  }
+
+  &::after {
+    content: '';
+    border: 0.25rem solid transparent;
+    border-top: 0.25rem solid;
+    transform: translate(-50%, -0.25rem);
+
+    @include themeify {
+      color: themed('dark');
+    }
+  }
+
+  &[data-placement='right'] {
+    &::before,
+    &::after {
+      top: 50%;
+      bottom: auto;
+      left: 100%;
+    }
+
+    &::before {
+      transform: translate(0.75rem, -50%);
+    }
+
+    &::after {
+      border: 0.25rem solid transparent;
+      border-right: 0.25rem solid;
+      transform: translate(0.25rem, -50%);
+    }
+  }
+
+  &[data-placement='bottom'] {
+    &::before,
+    &::after {
+      top: 100%;
+      bottom: auto;
+    }
+
+    &::before {
+      transform: translate(-50%, 0.75rem);
+    }
+
+    &::after {
+      border: 0.25rem solid transparent;
+      border-bottom: 0.25rem solid;
+      transform: translate(-50%, 0.25rem);
+    }
+  }
+
+  &[data-placement='left'] {
+    &::before,
+    &::after {
+      top: 50%;
+      right: 100%;
+      bottom: auto;
+      left: auto;
+    }
+
+    &::before {
+      transform: translate(-0.75rem, -50%);
+    }
+
+    &::after {
+      border: 0.25rem solid transparent;
+      border-left: 0.25rem solid;
+      transform: translate(-0.25rem, -50%);
+    }
+  }
+}

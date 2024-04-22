@@ -1,0 +1,36 @@
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+@use '../utils/icons' as *;
+
+:where(details) {
+  > summary:first-of-type {
+    list-style-type: none;
+    cursor: pointer;
+
+    &::before {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin-inline-end: 0.5em;
+      content: '';
+      vertical-align: -0.125em;
+      background-position: center;
+      background-size: 1em 0.75em;
+      transform: rotate(-90deg);
+      transition: $duration-base;
+
+      @include themeify {
+        background-image: icon-arrow(themed('dark'));
+      }
+    }
+  }
+
+  &[open] > summary:first-of-type {
+    margin-block-end: 0.5em;
+
+    &::before {
+      transform: rotate(0);
+    }
+  }
+}

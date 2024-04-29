@@ -7,21 +7,20 @@
 @forward 'base/typography';
 @forward 'base/adaptive';
 
-// import elements
-@forward 'elements/label';
-@forward 'elements/input';
-@forward 'elements/meter';
-@forward 'elements/table';
-@forward 'elements/select';
-@forward 'elements/option';
-@forward 'elements/button';
-@forward 'elements/dialog';
-@forward 'elements/progress';
-@forward 'elements/textarea';
-@forward 'elements/fieldset';
-@forward 'elements/legend';
+// import forms
+@forward 'forms/label';
+@forward 'forms/input';
+@forward 'forms/select';
+@forward 'forms/option';
+@forward 'forms/button';
+@forward 'forms/textarea';
+@forward 'forms/fieldset';
 
 // import components
+@forward 'components/meter';
+@forward 'components/table';
+@forward 'components/dialog';
+@forward 'components/progress';
 @forward 'components/loading.scss';
 @forward 'components/details.scss';
 @forward 'components/tooltip.scss';

@@ -18,7 +18,7 @@
       background-position: center;
       background-size: 1em 0.75em;
       transform: rotate(-90deg);
-      transition: $duration-base;
+      transition-duration: $duration-base;
 
       @include themeify {
         background-image: icon-arrow(themed('dark'));

@@ -12,7 +12,7 @@
     left: 50%;
     display: block;
     pointer-events: none;
-    transition: $duration-base;
+    transition-duration: $duration-base;
     visibility: hidden;
     opacity: 0;
   }

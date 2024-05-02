@@ -47,7 +47,7 @@
   color: $gray-100;
   cursor: pointer;
   border-radius: $radius-sm;
-  transition: $duration-fast;
+  transition-duration: $duration-fast;
   appearance: none;
 
   &:focus-visible {

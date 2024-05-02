@@ -2,7 +2,7 @@
 
 :where(option) {
   padding: 0.375rem 0.75rem;
-  transition: $duration-fast;
+  transition-duration: $duration-fast;
 
   &:checked {
     background-color: $gray-200;

@@ -29,7 +29,7 @@
 :where(a) {
   color: currentcolor;
   text-decoration: none;
-  transition: $duration-base;
+  transition-duration: $duration-base;
 
   &:hover {
     color: $blue-500;

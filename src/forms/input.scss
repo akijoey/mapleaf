@@ -5,7 +5,7 @@
 @use '../utils/icons' as *;
 
 :where(input) {
-  transition: $duration-fast;
+  transition-duration: $duration-fast;
   @extend %control;
 
   // button type
@@ -48,7 +48,7 @@
   &[type='search' i] {
     &::-webkit-search-cancel-button {
       cursor: pointer;
-      transition: $duration-fast;
+      transition-duration: $duration-fast;
     }
   }
 
@@ -71,7 +71,7 @@
       cursor: pointer;
       background-color: $gray-500;
       border: none;
-      transition: $duration-fast;
+      transition-duration: $duration-fast;
       appearance: none;
     }
 
@@ -110,7 +110,7 @@
       background-image: icon-circle($gray, 3);
       background-position: left center;
       border-radius: 0.5em;
-      transition: $duration-base;
+      transition-duration: $duration-base;
 
       &:checked {
         background-image: icon-circle($white, 3);
@@ -177,7 +177,7 @@
       background-position: center;
       background-size: contain;
       border-radius: 1rem;
-      transition: $duration-fast;
+      transition-duration: $duration-fast;
       appearance: none;
 
       @include themeify {
@@ -253,7 +253,7 @@
       height: 1rem;
       border: thin solid $gray-500;
       border-radius: $radius-xs;
-      transition: $duration-fast;
+      transition-duration: $duration-fast;
     }
 
     &::-webkit-color-swatch-wrapper {

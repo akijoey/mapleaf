@@ -13,7 +13,7 @@
   @mixin progress-value {
     background-size: 0.75rem 0.75rem;
     border-radius: 0.5rem;
-    transition: $duration-slow;
+    transition-duration: $duration-slow;
     @include gradient-striped;
 
     @include themeify {

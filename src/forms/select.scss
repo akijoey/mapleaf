@@ -13,7 +13,7 @@
   background-position: right 0.75rem center;
   background-size: 1rem 0.75rem;
   border-radius: $radius-sm;
-  transition: $duration-fast;
+  transition-duration: $duration-fast;
   appearance: none;
   @extend %control;
 

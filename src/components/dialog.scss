@@ -2,16 +2,43 @@
 @use '../utils/mixins' as *;
 
 :where(dialog) {
+  display: none;
   padding: 1rem;
   background-color: white;
   border: none;
   border-radius: $radius-md;
   box-shadow: $shadow-md;
-  transition: $duration-fast;
+  transition-duration: $duration-base;
+  transition-behavior: allow-discrete;
+  opacity: 0;
   @include fixed-center;
   @include animated;
 
   &::backdrop {
+    display: none;
     background-color: rgba($black, 0.2);
+    transition-duration: $duration-base;
+    transition-behavior: allow-discrete;
+    opacity: 0;
+  }
+
+  &[open] {
+    display: block;
+    opacity: 1;
+
+    &::backdrop {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  @starting-style {
+    &[open] {
+      opacity: 0;
+
+      &::backdrop {
+        opacity: 0;
+      }
+    }
   }
 }

@@ -1,3 +1,15 @@
+# [1.4.0](https://github.com/akijoey/mapleaf/compare/v1.3.0...v1.4.0) (2024-10-29)
+
+
+### Bug Fixes
+
+* upgrade devkit ([5806fe3](https://github.com/akijoey/mapleaf/commit/5806fe3597cf3bf78784492b4f683007a15e54dc))
+
+
+### Features
+
+* nav style ([884d3dd](https://github.com/akijoey/mapleaf/commit/884d3dd8482e6dfe6f94b98eddaa8db925d0ae5e))
+
 # [1.3.0](https://github.com/akijoey/mapleaf/compare/v1.2.4...v1.3.0) (2024-05-02)
 
 

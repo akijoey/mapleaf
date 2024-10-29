@@ -1,0 +1,50 @@
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+@use '../utils/icons' as *;
+
+:where(nav) {
+  display: flex;
+
+  menu,
+  ul,
+  ol {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding-inline-start: 0;
+
+    li {
+      padding: 0.5em 1em;
+    }
+  }
+
+  &[aria-label='breadcrumb'] {
+    align-items: center;
+
+    menu,
+    ul,
+    ol {
+      li {
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child)::after {
+          position: absolute;
+          right: -0.5em;
+          width: 1em;
+          height: 1em;
+          content: '';
+          background-position: center;
+          background-size: 1em 0.75em;
+          transform: rotate(-90deg);
+
+          @include themeify {
+            background-image: icon-arrow(themed('dark'));
+          }
+        }
+      }
+    }
+  }
+}

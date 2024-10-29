@@ -91,7 +91,6 @@
     width: 1em;
     height: 1em;
     vertical-align: -0.125em;
-    background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     appearance: none;
@@ -271,7 +270,6 @@
 
   // list
   &[list] {
-    background-repeat: no-repeat;
     background-position: right 0.75rem center;
     background-size: 1rem 0.75rem;
 
